@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+
+        input#txtn1, #txtn2 {
+            margin: 5px 13px;
+        }
+        
+        input {
+            font: normal  18pt Arial;
+            width: 100px;
+            margin: 20px 26px auto 20px;
+        }
+
+        div#calculo {
+            background-color: rgb(23, 123, 238);
+            width: 300px;
+            height: 270px;
+            border-radius: 6px;
+            margin-left: 40px; 
+        }
+
+        div#res {
+            margin-top: 30px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <div id=calculo>
+        <input type="number" name="txtn1" id="txtn1"> +
+        <input type="number" name="txtn2" id="txtn2">
+        <input type="button" value="Somar" onclick="somar()">
+        <input type="button" value="Subtrair" onclick="subtrair()">
+        <input type="button" value="Vezes" onclick="vezes()">
+        <input type="button" value="Dividir" onclick="dividir()">
+        <div id='res'>Resultado...</div>
+    </div>
+    
+    <script>
+        var tn1 = document.getElementById('txtn1') 
+        var tn2 = document.querySelector('input#txtn2') 
+        var res = document.getElementById('res')
+  
+        function somar() {
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+
+        function subtrair() {
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 - n2
+            res.innerHTML = `A subtração entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+
+        function vezes() {
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 * n2
+            res.innerHTML = `A multiplicação entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+
+        function dividir() {
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 / n2
+            res.innerHTML = `A divisão entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+    </script>
+</body>
+</html>
